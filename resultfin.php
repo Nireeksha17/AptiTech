@@ -54,7 +54,7 @@ th, td {
               		<td>A</td>
               		<td><span class='glyphicon glyphicon-ok' id='you".$qid."optionA' style='display:none;'></span</td>
               		<td><span class='glyphicon glyphicon-ok'  id='CorrectoptionA$qid' style = 'display:none;'></span></td>
-                    <td>".$que_assoc['optionA']."</td>
+                  <td>".$que_assoc['optionA']."</td>
           		</tr>
           			<td>B</td>
               		<td><span class='glyphicon glyphicon-ok' id='you".$qid."optionB' style='display:none; color:red'></span></td>
@@ -79,13 +79,10 @@ th, td {
                 echo "<script>document.getElementById('you".$qid.$_POST['options'.$eveluated['q_id']]."').style.display='block'; </script>";
               }
               echo "<script>document.getElementById('Correct".$eveluated['answer'].$qid."').style.display='block'; </script>";
-            }
+          }
 
-  }
-    
-
-  
-    ?>
+         }
+        ?>
     
 
 </body>
