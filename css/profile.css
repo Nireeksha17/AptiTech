@@ -1,0 +1,74 @@
+body {
+  background-color: rgba(255, 255, 255, 0.822);
+}
+.container {
+  display: table;
+  width: 100%;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+.clmn {
+  float: left;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: rgb(238, 221, 221);
+  border-radius: 8px;
+  height: 500px;
+}
+.left-grd {
+  width: 25%;
+  text-align: center;
+}
+.right-grd {
+  width: 20%;
+}
+.center-grd {
+  width: 55%;
+}
+.profile-logo {
+  padding: 0 10%;
+  width: 80%;
+  margin-bottom: 15px;
+}
+.profile-table {
+  width: 100%;
+  text-align: left;
+  /* border: 2px solid black; */
+}
+.profile-table tr td {
+  text-align: left;
+  padding-left: 10px;
+  font-size: 16px;
+  /* border: 2px solid black; */
+  width: max-content;
+}
+#center-heading-1 {
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 0.5px solid black;
+}
+.center-heading-2 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+#no-test {
+  text-align: center;
+  font-size: 23px;
+}
+.brdr {
+  border: 1px solid black;
+  width: 500px;
+  text-align: center;
+}
+#result-table tr th {
+  text-align: center;
+}
+.topic-remaining {
+  width: 100%;
+}
+.topics tr th a,
+.topics tr td a li {
+  text-decoration: none;
+  color: black;
+}
