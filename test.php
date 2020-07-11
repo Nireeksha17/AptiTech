@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Timer function Addig ljabsgdoijjsdf -->
 <html lang="en">
 <head>
   <link rel="icon" type= "image/png" href="img/fav_icon.png">
