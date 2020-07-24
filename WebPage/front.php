@@ -23,7 +23,7 @@
         <a href="login.php"><i class="fa fa-sign-in"></i> Login</a>
       </div> 
       <div class="dropdown" id="show-after-login" style="float: right;padding-right: 40px; display:none;">
-        <a href="profile.php">Profile</a>
+        <a href="profile.php"><?php echo $_SESSION['name'];?>'s Profile</a>
         <a href="php/logout.php"><i class="fa fa-sign-in" ></i> Logout</a>
       </div> 
     </div>

@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $_SESSION['start_time'] = date('Y-m-d H:i:s');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,7 @@
   <div class="container">
     <form action="result.php" method="post">
       <?php
+      var_dump($_SESSION, $_POST);
         if(isset($_SESSION)){
           include('php/get_questions.php');
           $qno = 1;
@@ -56,7 +58,7 @@
           }
         }
       ?>
-      <button type="submit" name="sub_btn" id="sub-btn">Submit</button>
+      <button type="submit" name="submit" id="sub-btn" value="<?php echo $_POST['submit'];?>">Submit</button>
     </form>
   </div>
 

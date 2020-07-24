@@ -1,5 +1,6 @@
 <?php 
-   include 'front.php';
+	session_start();
+  include 'front.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,18 +18,18 @@
   	<table style="margin-top: 5px;width: 1100px; font-family: sans-serif;">
   		<tr>
   			<th id="score" style="font-size: 25px;"></th>
-        <th id = "tot" style="font-size: 25px;"></th>
+        <th id ="tot" style="font-size: 25px;"></th>
         <th id="corr" style="font-size: 25px;"></th>
         <th id="unans" style="font-size: 25px;"></th>
   		</tr>
 		</table>
     <?php
-    	include('php/get_questions.php');
   
-    	$answer = 0;
-    	$sum = 0;
+			$answer = 0;
+			$sum = 0;
 			$qno = 1;
 			echo "<div id = 'a'></div>";
+			include ('php/get_questions.php');
 			include ('php/evaluate.php');
 			while($que_assoc = $question_table -> fetch_assoc()){
 				echo "<div class='que-and-ans'>";
@@ -71,7 +72,7 @@
 							<td>".$que_assoc['optionD']."</th>
 						</tr>
 					</table>";
-				$sql_qid ="SELECT `q_id`, `answer` FROM `question` WHERE `q_id` = $qno";
+				$sql_qid ="SELECT `q_id`, `answer` FROM `question` WHERE `topic_id`=$topic_id and `q_id` = $qno";
 				$res_eveluate = mysqli_query($con,$sql_qid);
 				if($eveluated = $res_eveluate -> fetch_assoc()){
 					$qno++;
@@ -95,7 +96,7 @@
 				<script>document.getElementById('corr').innerHTML='Answered: ".$answer."';</script>
 				<script>document.getElementById('unans').innerHTML='Wrong/Unanswered: ".$diff."';</script>
 			";
-
+			include ('php/result_ins.php');
 		?>
 	</div>
 </body>
