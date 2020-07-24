@@ -76,18 +76,28 @@
           echo "<div class = 'no-test'>No tests to be taken yet</div>";
         }
         else{
-          echo "<table class = 'result-table topic-remaining'>";
+          echo "
+            <table class = 'result-table topic-remaining'>
+            <form action ='TnC_test.php' method='POST'>
+          ";
+
           while($topics_remaining = $remaining_test -> fetch_assoc()){
             echo "<tr>
                   <td class = 'brdr'>".$topics_remaining['topic_name']."</td>
-                  <td class='brdr a-in-tbl'><a href='../Content/Time Speed and Distance.pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></td>
-                  <td class='brdr a-in-tbl'><a>TakeTest</a></td>
+                  <td class='brdr a-in-tbl'><button><a href='../Content/".$topics_remaining['cat_id']."-".$topics_remaining['topic_id'].".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button></td>
+                  <td class='brdr a-in-tbl'>
+                  <button type='submit' value='".$topics_remaining['cat_id']."-".$topics_remaining['topic_id']."' name='submit'>Take Test</button>
+                  </td>
                   </tr>"; 
           }
-          echo "</table>";
+          echo"
+          </table>
+          </form>
+          ";
         }
       ?>
       
+
     </div>
     <div class="clmn right-grd ">
         <table class="topics">
