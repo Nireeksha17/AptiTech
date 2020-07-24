@@ -1,0 +1,46 @@
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #eee;
+  color: #111;
+}
+.pos {
+  position: relative;
+  margin: 0 35%;
+  width: 30%;
+}
+.form-style {
+  max-width: 350px;
+  height: 400px;
+  padding: 16px;
+  background-color: #005461;
+  color: white;
+  border-radius: 10px;
+}
+.form-style .login-title {
+  text-decoration: none;
+  text-decoration-color: #9d9d9d;
+  text-align: center;
+}
+form label {
+  font-size: 20px;
+  font-weight: 300;
+}
+form button[type="submit"] {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: 20px;
+}

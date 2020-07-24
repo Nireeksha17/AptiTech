@@ -1,0 +1,44 @@
+
+     table,th,td {
+      border-radius: 20px;
+      border-collapse: collapse;
+  font-family: sans-serif;
+  background-color: white;
+ margin-left: 15px;
+
+
+}
+ th, td {
+  border-radius: 8px;
+   border:0.1px solid #6c8380;
+   background-color:#FFF0F5;
+  padding: 30px;
+  color: #6c8380;
+  font-weight: 20px;
+
+}
+  	
+  .container {
+  background-color: #6c8380;
+  border-radius: 8px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.que-and-ans {
+
+  font-size: 20px;
+  margin: 10px 0 25px 0;
+  border-bottom: 0.5px solid black;
+  background-color: #bfffe7;
+  border-radius: 8px;
+  color: #6c8380;
+  font-weight: 30px;
+ 
+}
+
+
+
+
+
+  
+
