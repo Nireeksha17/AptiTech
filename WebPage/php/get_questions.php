@@ -7,5 +7,5 @@
     $question_table = mysqli_query($con, $query);    
   }
   
-  ?>
+?>
   

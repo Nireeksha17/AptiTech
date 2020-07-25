@@ -2,6 +2,15 @@
 <?php
   session_start();
   include('php/config.php');
+  if(!isset($_SESSION)){
+    var_dump($_SESSION);  
+    echo "
+      <script>
+      alert('Login to see this page');
+      window.location = 'login.php';
+      </script>
+    ";
+  }
   $email = $_SESSION['email'];
   $que = " SELECT * FROM student where email = '$email'";
   $res = mysqli_query($con, $que);
@@ -61,18 +70,47 @@
           echo "<div class = 'no-test'>No tests taken yet</div>";
         }
         else {
-          echo "<table class = 'result-table'>";
-          echo "<tr><th class = 'brdr'>Topic Name</th><th class = 'brdr'>Total Marks</th><th class = 'brdr'>Time Taken</th><th class = 'brdr'>Date</th></tr>";
+          echo "
+            <form action='php/res_test.php' method='post'>
+            <table class = 'result-table'>
+            <tr>
+              <th class = 'brdr'>Topic Name</th>
+              <th class = 'brdr'>Total Marks</th>
+              <th class = 'brdr'>Time Taken</th>
+              <th class = 'brdr'>Date</th>
+              <th class = 'brdr'>Result</th>
+              <th class = 'brdr'>Re-Take Test</th>
+              </tr>
+          
+          ";
           while($test_assoc = $res_tests_taken->fetch_assoc()){
-            echo "<tr><td class = 'brdr'>".$test_assoc['topic_name']."</td><td class = 'brdr'>".$test_assoc['total_marks']."</td><td class = 'brdr'>".$test_assoc['time_taken']."</td><td class = 'brdr'>".$test_assoc['exam_date']."</td></tr>";
+            include ('php/topic_name.php');
+            echo "
+            <tr>
+            <td class = 'brdr'>".$topic_name['topic_name']."</td>
+            <td class = 'brdr'>".$test_assoc['total_marks']."</td>
+            <td class = 'brdr'>".$test_assoc['time_taken']."</td>
+            <td class = 'brdr'>".$test_assoc['exam_date']."</td>
+            <td class = 'brdr'>
+              <button type='submit' value='".$topic_name['cat_id']."-".$topic_name['topic_id']."' name='submit-result'>Result</button>
+            </td>
+            <td class='brdr a-in-tbl'>
+              <button type='submit' value='".$topic_name['cat_id']."-".$topic_name['topic_id']."' name='submit-test'>Take Test</button>
+            </td>
+            </tr>
+            ";
           }
-          echo "</table>";
+          echo "
+            </table>
+            </from>  
+          ";
+
         }
       ?>
       <div class="center-heading-2" style="padding-top: 20px;">Available Tests:</div>
       <?php
         include('php/remaining_tests.php');
-        if(!$remaining_test){
+        if(mysqli_num_rows($remaining_test)==0){
           echo "<div class = 'no-test'>No tests to be taken yet</div>";
         }
         else{
