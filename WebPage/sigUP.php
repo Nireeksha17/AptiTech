@@ -1,10 +1,10 @@
 <?php
-    include 'front.php';
-  
+include 'front.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+		<link rel="stylesheet" href="css/signup.css">
 		<title>SignUp</title>
 </head>
 <body>
@@ -36,12 +36,3 @@
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
