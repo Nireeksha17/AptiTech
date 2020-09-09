@@ -2,8 +2,7 @@
 <?php
 session_start();
 include 'php/config.php';
-
-if (!isset($_SESSION)) {
+if (!$_SESSION) {
     echo "
       <script>
       alert('Login to see this page');

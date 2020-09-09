@@ -17,28 +17,28 @@
           <a href="verbal.php">Verbal</a>
           <a href="reasoning.php">Reasoning</a>
         </div>
-      </div> 
+      </div>
       <div class="dropdown" id = "hide-after-login" style=" display:block; float: right;padding-right: 40px">
-      	<a href="sigUP.php"><i class="fa fa-sign-in"></i> Sign Up</a>
+      	<a href="signup.php"><i class="fa fa-sign-in"></i> Sign Up</a>
         <a href="login.php"><i class="fa fa-sign-in"></i> Login</a>
-      </div> 
+      </div>
       <div class="dropdown" id="show-after-login" style="float: right;padding-right: 40px; display:none;">
-        <a href="profile.php"><?php echo $_SESSION['name'];?>'s Profile</a>
+        <a href="profile.php"><?php echo $_SESSION['name']; ?>'s Profile</a>
         <a href="php/logout.php"><i class="fa fa-sign-in" ></i> Logout</a>
-      </div> 
+      </div>
     </div>
     <div class="footer">
       <p>Footer</p>
     </div>
     <?php
-      if(isset($_SESSION['usn'])){
-        echo "
+if (isset($_SESSION['usn'])) {
+    echo "
           <script>document.getElementById('hide-after-login').style.display = 'none';</script>
-          <script>document.getElementById('show-after-login').style.display = 'block';</script> 
+          <script>document.getElementById('show-after-login').style.display = 'block';</script>
         ";
-        
-      }
-    ?>
-    
+
+}
+?>
+
 </body>
 </html>
