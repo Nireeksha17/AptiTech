@@ -1,19 +1,20 @@
 <?php
-  session_start();
-  if(!isset($_SESSION)){
+session_start();
+if (!isset($_SESSION)) {
     echo "
       <script>
       alert('Please Login to take test!');
       document.location = 'login.php';
       </script>
     ";
-  }
-  else{
+} else {
+    if (isset($_SESSION['submit-test'])) {
+        $_POST['submit'] = $_SESSION['submit-test'];
+    }
     echo "Some Rules for taking test bla bla bla";
     echo "
       <form action='test.php' method='post'>
-      <button type='submit' value='".$_POST['submit']."' name='submit'>Take Test</button>
+      <button type='submit' value='" . $_POST['submit'] . "' name='submit'>Take Test</button>
       </form>
-    ";   
-  }
-?>
+    ";
+}

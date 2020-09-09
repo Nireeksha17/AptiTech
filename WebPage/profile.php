@@ -79,7 +79,6 @@ if (mysqli_num_rows($res_tests_taken) == 0) {
               <th class = 'brdr'>Result</th>
               <th class = 'brdr'>Re-Take Test</th>
               </tr>
-
           ";
     while ($test_assoc = $res_tests_taken->fetch_assoc()) {
         include 'php/topic_name.php';
@@ -112,18 +111,21 @@ if (mysqli_num_rows($remaining_test) == 0) {
     echo "<div class = 'no-test'>No tests to be taken yet</div>";
 } else {
     echo "
-            <table class = 'result-table topic-remaining'>
-            <form action ='TnC_test.php' method='POST'>
+          <table class = 'result-table topic-remaining'>
+          <form action ='TnC_test.php' method='POST'>
           ";
 
     while ($topics_remaining = $remaining_test->fetch_assoc()) {
         echo "<tr>
-                  <td class = 'brdr'>" . $topics_remaining['topic_name'] . "</td>
-                  <td class='brdr a-in-tbl'><button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button></td>
-                  <td class='brdr a-in-tbl'>
+                <td class = 'brdr'>" . $topics_remaining['topic_name'] . "
+                </td>
+                <td class='brdr a-in-tbl'>
+                  <button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button>
+                </td>
+                <td class='brdr a-in-tbl'>
                   <button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit'>Take Test</button>
-                  </td>
-                  </tr>";
+                </td>
+              </tr>";
     }
     echo "
           </table>
@@ -131,10 +133,8 @@ if (mysqli_num_rows($remaining_test) == 0) {
           ";
 }
 ?>
-
-
     </div>
-    <div class="clmn right-grd ">
+      <div class="clmn right-grd ">
         <table class="topics">
           <tr><th><a href="#">Aptitude</a></th></tr>
           <tr><td><a href="#"><li>Ages</li></a></td></tr>
