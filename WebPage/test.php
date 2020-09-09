@@ -38,7 +38,6 @@
   <div class="container">
     <form action="result.php" method="post">
       <?php
-      var_dump($_SESSION, $_POST);
         if(isset($_SESSION)){
           include('php/get_questions.php');
           $qno = 1;

@@ -66,7 +66,7 @@
       <div class="center-heading-2">Results:</div>
       <?php
         include('php/student_result.php');
-        if(!$res_tests_taken){
+        if(mysqli_num_rows($res_tests_taken) == 0){
           echo "<div class = 'no-test'>No tests taken yet</div>";
         }
         else {

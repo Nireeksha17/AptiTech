@@ -1,6 +1,6 @@
 <?php
 
-use function PHPSTORM_META\type;
+// use function PHPSTORM_META\type;
 
 include('config.php');
   $res_tests_taken = new stdClass();

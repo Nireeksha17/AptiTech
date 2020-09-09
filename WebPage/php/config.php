@@ -24,12 +24,19 @@
 					echo "
 						<script>
 						alert('Registration Successful! Login again!');
-						window.location = 'login.php';
+						window.location = '../login.php';
 						</script>
 					";
 				}
 				else
-					echo "<script> alert('Registration Failed! Contact the Admin');</script>";
+					echo "
+					<script> 
+						alert('Registration Failed! Contact the Admin');
+						window.location = '../home.php'	
+					</script>
+					
+					";
+					
 			}
 		}
 		else{
