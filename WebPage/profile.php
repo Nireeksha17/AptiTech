@@ -24,10 +24,9 @@ $row = $res->fetch_assoc();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/profile.css">
   <title><?php echo $row['name'] ?>: AptiTech-Profile </title>
-
 </head>
 <body>
-  <?php
+<?php
 include 'front.php';
 if (isset($_SESSION['name'])) {
     echo "
@@ -65,6 +64,7 @@ if (isset($_SESSION['name'])) {
       <div class="center-heading-2">Results:</div>
       <?php
 include 'php/student_result.php';
+
 if (mysqli_num_rows($res_tests_taken) == 0) {
     echo "<div class = 'no-test'>No tests taken yet</div>";
 } else {
@@ -73,7 +73,7 @@ if (mysqli_num_rows($res_tests_taken) == 0) {
             <table class = 'result-table'>
             <tr>
               <th class = 'brdr'>Topic Name</th>
-              <th class = 'brdr'>Total Marks</th>
+              <th class = 'brdr'>Marks Scored</th>
               <th class = 'brdr'>Time Taken</th>
               <th class = 'brdr'>Date</th>
               <th class = 'brdr'>Result</th>

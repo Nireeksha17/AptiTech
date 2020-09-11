@@ -15,7 +15,7 @@ if (isset($_POST['submit_btn'])) {
         $num = mysqli_num_rows($query_run);
         if ($num > 0) {
             echo "<script> alert('User Already Exists! Login ');</script>";
-            echo "<script>window.location ='../signup.php';</script>";
+            echo "<script>window.location ='../login.php';</script>";
         } else {
             $hash_passwod = password_hash($password, PASSWORD_DEFAULT);
             $query = "INSERT INTO student VALUES ('$usn','$fullname','$username','$dept','$phno','$hash_passwod')";
@@ -30,13 +30,13 @@ if (isset($_POST['submit_btn'])) {
                 echo "
 					<script>
 						alert('Registration Failed! Contact the Admin');
-						window.location = '../signup.php';
+						window.location = '../home.php';
 					</script>
 					";
             }
         }
     } else {
-        echo "<script>alert('password doesnt match');
+        echo "<script>alert('Password does not match!');
 			window.location ='../signup.php';</script>";
     }
 }

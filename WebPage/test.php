@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  $_SESSION['start_time'] = date('Y-m-d H:i:s');
+session_start();
+$_SESSION['start_time'] = date('Y-m-d H:i:s');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,33 +31,33 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <img src = "img/logo.png" align="left"  style="width: 60%; padding-top: 7px; left: 8px;">
-      </div>  
+      </div>
     </div>
-  </nav>  
+  </nav>
   <div id = "response" class="timer"></div>
   <div class="container">
     <form action="result.php" method="post">
       <?php
-        if(isset($_SESSION)){
-          include('php/get_questions.php');
-          $qno = 1;
-          while($que_assoc = $question_table -> fetch_assoc()){
-            echo "<div class='que-and-ans'>";
-            echo "<div class='question'>";
-            echo $qno++.". ".$que_assoc['question'];
-            echo "</div>";
-            echo "<div class='answer'>";
-            $qid = $que_assoc['q_id'];
-            echo "<input type='radio' name='options$qid' id='optionA' value = 'optionA'>".$que_assoc['optionA']."<br>";
-            echo "<input type='radio' name='options$qid' id='optionB' value = 'optionB'>".$que_assoc['optionB']."<br>";
-            echo "<input type='radio' name='options$qid' id='optionC' value = 'optionC'>".$que_assoc['optionC']."<br>";
-            echo "<input type='radio' name='options$qid' id='optionD' value = 'optionD'>".$que_assoc['optionD']."<br>";
-            echo "</div>";
-            echo "</div>";
-          }
-        }
-      ?>
-      <button type="submit" name="submit" id="sub-btn" value="<?php echo $_POST['submit'];?>">Submit</button>
+if (isset($_SESSION)) {
+    include 'php/get_questions.php';
+    $qno = 1;
+    while ($que_assoc = $question_table->fetch_assoc()) {
+        echo "<div class='que-and-ans'>";
+        echo "<div class='question'>";
+        echo $qno++ . ". " . $que_assoc['question'];
+        echo "</div>";
+        echo "<div class='answer'>";
+        $qid = $que_assoc['q_id'];
+        echo "<input type='radio' name='options$qid' id='optionA' value = 'optionA'>" . $que_assoc['optionA'] . "<br>";
+        echo "<input type='radio' name='options$qid' id='optionB' value = 'optionB'>" . $que_assoc['optionB'] . "<br>";
+        echo "<input type='radio' name='options$qid' id='optionC' value = 'optionC'>" . $que_assoc['optionC'] . "<br>";
+        echo "<input type='radio' name='options$qid' id='optionD' value = 'optionD'>" . $que_assoc['optionD'] . "<br>";
+        echo "</div>";
+        echo "</div>";
+    }
+}
+?>
+      <button type="submit" name="submit" id="sub-btn" value="<?php echo $_POST['submit']; ?>">Submit</button>
     </form>
   </div>
 
@@ -70,6 +70,6 @@ setInterval(function()
   document.getElementById("response").innerHTML = xmlhttp.responseText;
 },1000);
 </script>
-  
+
 </body>
 </html>
