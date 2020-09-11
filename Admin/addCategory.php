@@ -8,6 +8,7 @@ $_SESSION['admin_name'];
 <html>
   <head>
     <title>Add Category</title>
+    <link rel="icon" href="Images/icon.ico" type="image/x-icon" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/addCategoryStyle.css">
@@ -55,11 +56,6 @@ $_SESSION['admin_name'];
       </div>
     </div>
 
-    <!--Footer-->
-    <div class="footer">
-      <p>Footer</p>
-    </div>
-    <br><br>
 
     <!-- Javascript to make alert box disappear when close button is pressed-->
     <script type="text/javascript">
@@ -98,5 +94,13 @@ $_SESSION['admin_name'];
     }
     ?>
 
+    <!--Footer-->
+    <div style="position: fixed;left: 0;bottom: 0;width: 100%;background-color:#005461;height:30px;color: white;">
+      <img src="Images/apti_icon.png" width="28px" align="left" style="padding-left: 60px;">
+      <span style="padding-left:200px;font-size:20px;font-style: italic;color: black;font-family:Trebuchet MS,Arial, Helvetica, sans-serif;font-weight: bold;"><i class="fa fa-instagram" style="padding-right:10px;color: white"></i>apti_tech</span>
+      <span style="padding-left:200px;font-size:20px;font-style: italic;color: black;font-family:Trebuchet MS,Arial, Helvetica, sans-serif;font-weight: bold;"><i class="fa fa-facebook-official" style="padding-right:10px;color: white"></i>aptitech</span>
+      <span style="padding-left:200px;font-size:20px;font-style: italic;color: black;font-family:Trebuchet MS,Arial, Helvetica, sans-serif;font-weight: bold;"><i class="fa fa-envelope" style="padding-right:10px;color: white"></i>aptitech@gmail.com</span>
+      <span style="padding-left:200px;font-size:20px;font-style: italic;color: black;font-family:Trebuchet MS,Arial, Helvetica, sans-serif;font-weight: bold;"><i class="fa fa-phone" style="padding-right:10px;color: white"></i>8762840329</span>
+    </div>
   </body>
 </html>
