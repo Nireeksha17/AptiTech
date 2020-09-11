@@ -10,16 +10,16 @@ if (isset($_POST['submit_btn'])) {
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
     if ($password == $cpassword) {
-        $query = "SELCT * FROM student WHERE email='$username'";
+        $query = "SELECT * FROM student WHERE email='$username'";
         $query_run = mysqli_query($con, $query);
-        if ($query_run) {
+        $num = mysqli_num_rows($query_run);
+        if ($num > 0) {
             echo "<script> alert('User Already Exists! Login ');</script>";
-            echo "<script>window.location ='login.php';</script>";
+            echo "<script>window.location ='../signup.php';</script>";
         } else {
             $hash_passwod = password_hash($password, PASSWORD_DEFAULT);
-            $query = "INSERT INTO `student`(`usn`, `name`, `email`, `department`, `mobile_number`, `password`) VALUES ('$usn', '$fullname', '$username', '$dept', '$phno', '$hash_passwod');";
-            $query_run = mysqli_query($con, $query);
-            if ($query_run) {
+            $query = "INSERT INTO student VALUES ('$usn','$fullname','$username','$dept','$phno','$hash_passwod')";
+            if (mysqli_query($con, $query)) {
                 echo "
 						<script>
 						alert('Registration Successful! Login again!');
@@ -27,19 +27,16 @@ if (isset($_POST['submit_btn'])) {
 						</script>
 					";
             } else {
-                var_dump($hash_passwod, $query_run);
-                // echo "
-                //     <script>
-                //         alert('Registration Failed! Contact the Admin');
-                //         window.location = '../home.php';
-                //     </script>
-
-                //     ";
+                echo "
+					<script>
+						alert('Registration Failed! Contact the Admin');
+						window.location = '../signup.php';
+					</script>
+					";
             }
-
         }
     } else {
-        echo "<script>alert('Password does not match');</script>";
-        echo "<script>window.location ='../signup.php';</script>";
+        echo "<script>alert('password doesnt match');
+			window.location ='../signup.php';</script>";
     }
 }

@@ -1,0 +1,489 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+/*Navbar*/
+.navbar {
+  overflow: hidden;
+  background-color: #005461;
+  height:68px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 17px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 17px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/*Footer*/
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#005461;
+   height: 40px;
+   color: white;
+   text-align: center;
+}
+
+
+/*Separates segments*/
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+
+/*Add Category box model*/
+.addCategory1
+{
+  padding-top:10px;
+  width: 700px;
+  height:180px;
+  border: 2px solid white;
+  margin-left: 400px;
+  margin-top: 80px;
+  background-color: #005461;
+  color: white;
+}
+.addCategory
+{
+  padding-top:30px;
+  width: 700px;
+  height:200px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+}
+
+/*Add Topic box model*/
+.addTopic1
+{
+  padding-top:10px;
+  width: 700px;
+  height:372px;
+  border: 2px solid white;
+  margin-left: 400px;
+  margin-top: 80px;
+  background-color: #005461;
+  color: white;
+}
+.addTopic
+{
+  padding-top:30px;
+  width: 700px;
+  height:300px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+}
+
+
+/*Red colored asterrisk symbol*/
+.required
+{
+  color: red;
+}
+
+
+/*Alert box*/
+.alert 
+{
+  padding: 20px;
+  background-color: rgba(17, 255, 0,0.7);
+  color: black;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 80px;
+  left:10px;
+  width:1470px;
+}
+.alert2
+{
+  padding: 20px;
+  background-color: rgba(17, 255, 0,0.7);
+  color: black;
+  letter-spacing: 2px;
+  position:absolute;
+  top:100px;
+  left:10px;
+  width:1460px
+}
+
+.closebtn 
+{
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover 
+{
+  color: black;
+}
+
+
+/*Table*/
+.mainTable
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-color:black;
+  color: white;
+  border-collapse: collapse;
+  width: 1200px;
+  text-align: left;
+}
+
+.mainTable th
+{
+  border: 1px solid white;
+  background-color:black;
+  color: white;
+}
+.customers 
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-color:black;
+  color: white;
+  border-collapse: collapse;
+  width: 1430px;
+}
+
+.customers td, .customers th 
+{
+  border: 1px solid white;
+  padding: 20px;
+  background-color:black;
+  color: white;
+}
+
+.customers th 
+{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color:#005461;
+  color: white;
+}
+
+
+/*buttons*/
+.btn
+{
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 16px;
+}
+.btn:hover
+{
+  background-color: rgba(3, 252, 94,0.7);
+  color: black;
+}  
+.edit
+{
+  background-color: rgb(255, 119, 0);
+  border-color: white;
+  width: 120px;
+  position:relative;
+  top:10px;
+  left: 100px;
+}
+.delete
+{
+  background-color: rgb(247, 2, 2);
+  position:relative;
+   width: 120px;
+  top:-25px;
+  left: 470px;
+}
+
+.back
+{
+  background-color: rgb(255, 119, 0);
+  width: 110px;
+  
+}
+.add
+{
+  background-color: rgb(69, 81, 255);
+  position: absolute;
+  left: 390px;
+}
+
+/*Confirmation dialogue box*/     
+.box
+{
+  border: 1px solid black;
+  padding: 20px;
+  background-color: white;
+  width: 400px;
+  color: black;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 20px;
+  left: 530px;
+  height: 120px;
+}
+
+.boxbtn 
+{
+  margin-left: 15px;
+  color:black;
+  font-weight: bold;
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color:white;
+}
+
+.boxbtn:hover
+{
+  color: red;
+}
+
+/*Buttons*/
+.btn2
+{
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 14px;
+}
+.btn2:hover
+{
+  background-color: rgba(3, 252, 94,0.7);
+  color: black;
+} 
+.edit2
+{
+  background-color: rgb(255, 119, 0);
+  position:relative;
+  left: 160px;
+}
+.manage2
+{
+  background-color: rgb(69, 81, 255);
+  position:relative;
+  left:-10px;
+  top:32px;
+}
+.delete2
+{
+  background-color: rgb(247, 2, 2);
+  position:relative;
+  top:-35px;
+  left: 240px;
+}
+
+/*text area*/
+.area
+{
+  position: absolute;
+  left: 350px;
+}
+
+/*file upload button*/
+#inputfile
+{
+}
+.upload
+{
+  position: absolute;
+  left: 350px;
+  width: 140px;
+  height: 35px;
+  font-size: 17px;
+  border-color:red;
+  background-color: #ddd;
+  color: black;
+}
+.upload:hover
+{
+  color: black;
+  background-color: rgba(0, 255, 26,0.5);
+  border-color: white;
+  cursor: pointer; 
+}
+
+/*submit button for questions*/
+.subbtn
+{
+  width:120px;
+  height:40px;
+  background-color:rgb(0, 128, 255);
+  border-color: white;
+  color:white;
+  font-size: 17px;
+  position: absolute;
+  left:280px;
+}
+.subbtn:hover
+{
+  background-color:rgba(0, 128, 255,0.5);
+  border-color: black;
+  color:black;
+  cursor: pointer;
+}
+
+/*submit button*/
+.subbtn2
+{
+  width:120px;
+  height:38px;
+  background-color:rgb(0, 128, 255);
+  border-color: white;
+  color:white;
+  font-size: 17px;
+}
+.subbtn2:hover
+{
+  background-color:rgba(0, 128, 255,0.5);
+  border-color: black;
+  color:black;
+  cursor: pointer;
+}
+
+/*pdf button*/
+.pdf
+{
+  border:none;
+  width: 100px;
+  height: 35px;
+  font-size: 17px;
+  background-color: rgb(247, 2, 2);
+  color: white;
+}
+.pdf:hover
+{
+  color: black;
+  background-color: rgba(0, 255, 26,0.5);
+  cursor: pointer; 
+}
+
+.list
+{
+  background-color: rgba(0,0,0,0.8);
+  width: 300px;
+  margin-left: 30px;
+  color: white;
+}
+.list input
+{
+  font-size: 20px;
+  color: white;
+  background-color: rgba(255,0,0,0.0);
+  border-style: none;
+}
+.list input:hover
+{
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0,255,0,0.3);
+  border-style: none;
+}
+.list li
+{
+  font-style: italic;
+  font-size: 20px;
+  padding-left: 50px;
+  color: white;
+}
+.container
+{
+  width: 100%;
+  background-color: rgba(20,20,0,0.8);
+  color: white;
+}
+.column 
+{
+  float: left;
+  padding: 10px;
+}
+.row:after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+.skills
+{
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+.bgimg-2
+{
+  position: relative; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-2 
+{
+  background-image: url("Images/c.jpg");
+  min-height: 400px;
+}

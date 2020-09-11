@@ -31,8 +31,8 @@ include 'front.php';
 			<label> Confirm Password:</label><br>
 			<input name ="cpassword" type="password" placeholder=" Re-type your password" required/><br>
 			<input name ="submit_btn" type="submit" id ="Sign-btn" value="SignUp"/><br>
+			</form>
 			<a href="login.php"><input type="button" id ="back-btn" value="Back"/></a>
-		</form>
 	</div>
 </body>
 </html>

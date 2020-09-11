@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+/*Navbar*/
+.navbar {
+	height:80px ;
+  background-color: #005461;
+}
+
+/*Icon display */
+.imgdisplay
+{
+  width:130px;
+  position:relative;
+  top:-40px;
+}
+
+/*Table*/
+.mainTable
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-color:black;
+  color: white;
+  border-collapse: collapse;
+  width: 1200px;
+  text-align: left;
+}
+
+.mainTable i
+{
+  padding-right:10px;
+}
+.mainTable th
+{
+  border: 1px solid white;
+  background-color:black;
+  color: white;
+}
+.customers 
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-color:black;
+  color: white;
+  border-collapse: collapse;
+  width: 1430px;
+}
+
+.customers td, .customers th 
+{
+  border: 1px solid white;
+  padding: 20px;
+  background-color:black;
+  color: white;
+}
+
+.customers th 
+{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color:#005461;
+  color: white;
+}
+
+/*buttons*/
+.btn
+{
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 16px;
+}
+.btn:hover
+{
+  background-color: rgba(3, 252, 94,0.7);
+  color: black;
+}  
+
+.back
+{
+  background-color: rgb(255, 119, 0);
+  width: 110px;
+  
+}
+.back i
+{
+	padding-right:10px;
+}
+.add
+{
+  background-color: rgb(69, 81, 255);
+  position: absolute;
+  left: 390px;
+}
+.add i
+{
+	padding-right:10px;
+}
+
+/*Red colored asterrisk symbol*/
+.required
+{
+  color: red;
+}
+
+/*text area*/
+.area
+{
+  position: absolute;
+  left: 350px;
+}
+
+/*submit button for questions*/
+.subbtn
+{
+  width:120px;
+  height:40px;
+  background-color:rgb(0, 128, 255);
+  border-color: white;
+  color:white;
+  font-size: 17px;
+  position: absolute;
+  left:280px;
+}
+.subbtn:hover
+{
+  background-color:rgba(0, 128, 255,0.5);
+  border-color: black;
+  color:black;
+  cursor: pointer;
+}
+.alert2
+{
+  padding: 20px;
+  background-color: rgba(17, 255, 0,0.7);
+  color: black;
+  letter-spacing: 2px;
+  position:absolute;
+  top:100px;
+  left:10px;
+  width:1460px
+}
+
+.closebtn 
+{
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover 
+{
+  color: black;
+}
+/*buttons*/
+.btn
+{
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 16px;
+}
+.btn:hover
+{
+  background-color: rgba(3, 252, 94,0.7);
+  color: black;
+}  
+
+.delete
+{
+  background-color: rgb(247, 2, 2);
+  position:relative;
+   width: 120px;
+  top:-25px;
+  left: 470px;
+}
+
+
+.alert2
+{
+  padding: 20px;
+  background-color: rgba(17, 255, 0,0.7);
+  color: black;
+  letter-spacing: 2px;
+  position:absolute;
+  top:100px;
+  left:10px;
+  width:1460px
+}
+
+.closebtn 
+{
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover 
+{
+  color: black;
+}
+/*Confirmation dialogue box*/     
+.box
+{
+  border: 1px solid black;
+  padding: 20px;
+  background-color: white;
+  width: 400px;
+  color: black;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 20px;
+  left: 530px;
+  height: 120px;
+}
+
+.boxbtn 
+{
+  margin-left: 15px;
+  color:black;
+  font-weight: bold;
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color:white;
+}
+
+.boxbtn:hover
+{
+  color: red;
+}
+
+
