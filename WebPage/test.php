@@ -1,5 +1,14 @@
 <?php
 session_start();
+if (!isset($_SESSION) || !isset($_POST['submit'])) {
+    echo "
+    <script>
+    alert('Please login to take test!');
+    window.location = 'home.php';
+    </script>
+    ";
+}
+
 $_SESSION['start_time'] = date('Y-m-d H:i:s');
 ?>
 <!DOCTYPE html>

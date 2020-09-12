@@ -8,13 +8,10 @@ if (!isset($_SESSION)) {
       </script>
     ";
 } else {
-    if (isset($_SESSION['submit-test'])) {
-        $_POST['submit'] = $_SESSION['submit-test'];
-    }
     echo "Some Rules for taking test bla bla bla";
     echo "
       <form action='test.php' method='post'>
-      <button type='submit' value='" . $_POST['submit'] . "' name='submit'>Take Test</button>
+      <button type='submit' value='" . $_POST['submit-test'] . "' name='submit'>Take Test</button>
       </form>
     ";
 }
