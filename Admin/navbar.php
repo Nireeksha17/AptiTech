@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="icon" href="Images/i.ico" type="image/x-icon" >
+</head>
 <body>
 
 <!-- Navbar Design -->

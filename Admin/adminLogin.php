@@ -5,7 +5,7 @@ session_start();
   <html>
     <head>
       <title>Login</title>
-      <link rel="icon" href="Images/icon.ico" type="image/x-icon" >
+      <link rel="icon" href="Images/i.ico" type="image/x-icon" >
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="CSS/adminLoginStyle.css">
     </head>
