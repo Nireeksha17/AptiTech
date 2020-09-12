@@ -26,10 +26,10 @@ $_SESSION['admin_name'];
       if($num1>0)
       {
         $x=1;
-        echo "<div class='bgimg-2'><div class='row'><br><div class='column'><div class='list'><br><hr>";
+        echo "<div class='bgimg-2'><div class='row'><br><div class='column'><div class='list'><br><hr><br>";
         while ($value1=$result1->fetch_assoc())
          {
-            echo "<form class='available' action='' method='POST'>".$x." . <input type='submit' style='font-weight:bold' value=".$value1["cat_name"]." name='category'></form>";
+            echo "<form class='available' action='' method='POST'>".$x." . <input type='submit' style='font-weight:bold' value=".$value1["cat_name"]." name='category'></form><br>";
             $id=$value1["cat_id"];
             $check2="SELECT * FROM topic WHERE cat_id='$id'";
             $result2=mysqli_query($conn,$check2);
@@ -38,13 +38,13 @@ $_SESSION['admin_name'];
             {
               while ($value2=$result2->fetch_assoc())
                {
-                  echo "<form class='available' action='' method='POST'><li><input type='submit' name='topic' value=".$value2["topic_name"]."></li></form>";
+                  echo "<form class='available' action='' method='POST'><li><input type='submit' name='topic' value=".$value2["topic_name"]."></li></form><br>";
                 }
             }
             $x++;
         }
       }
-      echo "<br><hr><br></div></div>";
+      echo "<br><br><hr><br></div></div>";
     ?>
 
     <!-- Category result -->
@@ -164,13 +164,6 @@ $_SESSION['admin_name'];
       }
     ?>
   </div>
-
-    <div class="stat">
-     <p align="center">ABOUT US</p>
-    </div>
-    <div class='bgimg-2'><br>
-      <p align="center" class="about">ABOUT US</p>
-    </div>
     <br>
   </body>	
 </html>
