@@ -1,5 +1,15 @@
 <?php
-  session_start();
+
+session_start();
+if (!isset($_SESSION) || !isset($_POST['submit'])) {
+    echo "
+    <script>
+    alert('Please login to take test!');
+    window.location = 'home.php';
+    </script>
+    ";
+}
+  
   $link = mysqli_connect("localhost","root","");
   mysqli_select_db($link,"aptitech");
   $duration = "";

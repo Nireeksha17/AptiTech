@@ -20,7 +20,8 @@
       else
       { 
         if($userDetails = $result->fetch_assoc()){
-          $stored_password = $userDetails['password'];
+          $stored_password =$userDetails['password']; 
+          echo password_verify("$pass", $stored_password);
           if(password_verify($pass, $stored_password)){
             $_SESSION['name'] =  $userDetails['name'];
             $_SESSION['email'] = $userEmail;
@@ -33,10 +34,10 @@
           }
           else{
             echo"
-            <script>
-            alert('Invalid Credentials');
-            document.location = '../login.php';
-            </script>
+            // <script>
+            // alert('Invalid Credentials');
+            // document.location = '../login.php';
+            // </script>
             ";
           }
         } 
