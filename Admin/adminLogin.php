@@ -5,15 +5,16 @@ session_start();
   <html>
     <head>
       <title>Login</title>
-      <link rel="icon" href="Images/icon.ico" type="image/x-icon" >
+      <link rel="icon" href="Images/i.ico" type="image/x-icon" >
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="CSS/adminLoginStyle.css">
     </head>
 
     <body style="background-image: url('Images/c.jpg');">
-      <div align="center" class="loginform" >
-        <form action="" method="POST">
-          <h1>Login</h1>
+      <div align="center" class="loginform">
+        <form action="" method="POST" style="height:100%">
+          <img src="Images/aptitech.png" align="center">
+          <h1>Admin Login</h1>
           <hr><br>
           <label for="admin_email"><b>Email</b></label><br>
           <input type="email"  placeholder="Enter Name" name="admin_email"  required  ><br><br>
