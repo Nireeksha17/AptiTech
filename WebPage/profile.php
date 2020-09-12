@@ -69,14 +69,13 @@ if (mysqli_num_rows($res_tests_taken) == 0) {
     echo "<div class = 'no-test'>No tests taken yet</div>";
 } else {
     echo "
-            <form action='php/res_test.php' method='post'>
+            <form action='TnC_test.php' method='post'>
             <table class = 'result-table'>
             <tr>
               <th class = 'brdr'>Topic Name</th>
               <th class = 'brdr'>Marks Scored</th>
               <th class = 'brdr'>Time Taken</th>
               <th class = 'brdr'>Date</th>
-              <th class = 'brdr'>Result</th>
               <th class = 'brdr'>Re-Take Test</th>
               </tr>
           ";
@@ -88,9 +87,6 @@ if (mysqli_num_rows($res_tests_taken) == 0) {
             <td class = 'brdr'>" . $test_assoc['total_marks'] . "</td>
             <td class = 'brdr'>" . $test_assoc['time_taken'] . "</td>
             <td class = 'brdr'>" . $test_assoc['exam_date'] . "</td>
-            <td class = 'brdr'>
-              <button type='submit' value='" . $topic_name['cat_id'] . "-" . $topic_name['topic_id'] . "' name='submit-result'>Result</button>
-            </td>
             <td class='brdr a-in-tbl'>
               <button type='submit' value='" . $topic_name['cat_id'] . "-" . $topic_name['topic_id'] . "' name='submit-test'>Take Test</button>
             </td>
@@ -108,13 +104,12 @@ if (mysqli_num_rows($res_tests_taken) == 0) {
       <?php
 include 'php/remaining_tests.php';
 if (mysqli_num_rows($remaining_test) == 0) {
-    echo "<div class = 'no-test'>No tests to be taken yet</div>";
+    echo "<div class = 'no-test'>No new tests to be taken yet</div>";
 } else {
     echo "
           <table class = 'result-table topic-remaining'>
           <form action ='TnC_test.php' method='POST'>
           ";
-
     while ($topics_remaining = $remaining_test->fetch_assoc()) {
         echo "<tr>
                 <td class = 'brdr'>" . $topics_remaining['topic_name'] . "
@@ -123,7 +118,7 @@ if (mysqli_num_rows($remaining_test) == 0) {
                   <button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button>
                 </td>
                 <td class='brdr a-in-tbl'>
-                  <button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit'>Take Test</button>
+                  <button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit-test'>Take Test</button>
                 </td>
               </tr>";
     }
