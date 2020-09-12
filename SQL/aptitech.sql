@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 12, 2020 at 11:32 AM
+-- Generation Time: Sep 12, 2020 at 07:54 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -63,6 +63,28 @@ INSERT INTO `category` (`cat_id`, `cat_name`) VALUES
 (1, 'Aptitude'),
 (2, 'Technical'),
 (3, 'Verbal');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE `company` (
+  `co_id` int(11) NOT NULL,
+  `co_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `co_url`
+--
+
+CREATE TABLE `co_url` (
+  `co_id` int(11) NOT NULL,
+  `url` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -128,7 +150,9 @@ CREATE TABLE `result` (
 INSERT INTO `result` (`student_usn`, `topic_id`, `topic_name`, `total_marks`, `time_taken`, `exam_date`) VALUES
 ('4CB17CS001', 1, 'Ages', 3, '00:00:07', '2020-09-12 10:10:46'),
 ('4CB17CS001', 3, 'Java', 1, '00:00:05', '2020-09-12 10:11:03'),
-('4CB17CS001', 2, 'Averages', 1, '00:00:06', '2020-09-12 10:11:17');
+('4CB17CS001', 2, 'Averages', 1, '00:00:06', '2020-09-12 10:11:17'),
+('4CB17CS001', 3, 'Java', 1, '00:00:09', '2020-09-12 12:20:54'),
+('4CB17CS001', 1, 'Ages', 0, '00:00:54', '2020-09-12 12:21:14');
 
 -- --------------------------------------------------------
 
@@ -199,6 +223,18 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- Indexes for table `company`
+--
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`co_id`);
+
+--
+-- Indexes for table `co_url`
+--
+ALTER TABLE `co_url`
+  ADD KEY `fk_co_id` (`co_id`);
+
+--
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
@@ -235,6 +271,12 @@ ALTER TABLE `category`
   MODIFY `cat_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `company`
+--
+ALTER TABLE `company`
+  MODIFY `co_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
@@ -249,6 +291,12 @@ ALTER TABLE `topic`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `co_url`
+--
+ALTER TABLE `co_url`
+  ADD CONSTRAINT `fk_co_id` FOREIGN KEY (`co_id`) REFERENCES `company` (`co_id`);
 
 --
 -- Constraints for table `question`
