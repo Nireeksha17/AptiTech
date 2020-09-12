@@ -5,4 +5,5 @@ if (isset($_SESSION)) {
     $topic_id = $cat_topic_arr[1];
     $query = "SELECT * FROM question WHERE topic_id = $topic_id";
     $question_table = mysqli_query($con, $query);
+    
 }

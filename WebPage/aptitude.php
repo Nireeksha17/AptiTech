@@ -9,7 +9,7 @@
       table, th, td {
   border: none;
   border-collapse: collapse;
-  background-color: white;
+  background-color: white; 
   color: black;
 }
 th, td {
@@ -31,10 +31,30 @@ input[type="button"]{
     </style>
 </head>
 <body>
+
 	<div style="padding-left:20px; padding-right: 20px; padding-top: 5px;">
       <h1 align="center" style="color: black; text-decoration: underline; text-decoration: none;">APTITUDE</h1>
-
-      <table style="margin-left: 25%;">
+      <center>
+      <table><tr>
+      <?php
+      $conn=mysqli_connect("localhost","root","","aptitech");
+      $query="SELECT * FROM topic where cat_id = 1";
+      $result = mysqli_query($conn,$query);
+      //while ($que_assoc = $result->fetch_assoc()) {
+        
+        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+       
+          echo"   <td style='color:white;text-decoration:none;'>
+         <button  style='padding: 20px;background-color:#005461;color:white; width: 150px;white-space: normal; height:100px;'><a href='../Content/" . $row['cat_id'] . "-" . $row['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>".$row['topic_name']."</a></button>
+        </td>";
+        } 
+        //' name='submit-test'   .$row['topic_name'].  
+        ?>
+        
+    </tr><br></table></center>
+  </body>
+</html>
+      <!--<table style="margin-left: 25%;">
             
              
             <tr>
@@ -71,9 +91,7 @@ input[type="button"]{
       		</tr>
         
       
-        </table>;
+        </table>;-->
         
         
 
-</body>
-</html>
