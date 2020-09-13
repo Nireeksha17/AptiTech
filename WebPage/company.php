@@ -1,5 +1,6 @@
 <?php
-	include 'front.php';
+session_start();
+include 'front.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +11,7 @@
 <body>
   <div class="cont" >
     <h1 class ='heading'> Company Papers</h1>
-    <table class="comp-table"> 
+    <table class="comp-table">
       <tr>
         <td><input type="button" value="Infosys"></td>
         <td><input type="button" value="TCS"></td>
@@ -23,7 +24,7 @@
         <td><input type="button" value="SAP"></td>
         <td><input type="button" value="IBM"></td>
         <td><input type="button" value="Capgemini"></td>
-        <td><input type="button" value="Mindtree"></td>  
+        <td><input type="button" value="Mindtree"></td>
       </tr>
       <tr>
         <td><input type="button" value="ABB"></td>
