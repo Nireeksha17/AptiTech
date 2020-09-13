@@ -4,11 +4,11 @@ include 'front.php';
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="stylesheet" href="css/signup.css">
+		<link rel="stylesheet" href ="css/signup.css">
 		<title>SignUp</title>
 </head>
 <body>
-	<div id="log">
+	<div class="log">
 		<h2>SignUp</h2>
 		<img src ="images/login1.png" ><span id="lo"></span>
 		<form action="php/config.php" method="post">
