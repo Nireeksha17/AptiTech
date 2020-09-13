@@ -10,7 +10,7 @@ include 'front.php';
 <body>
 	<div class="log">
 		<h2>SignUp</h2>
-		<img src ="images/login1.png" ><span id="lo"></span>
+		<img src ="img/profile_logo.png" id = "logo" ><span id="lo"></span>
 		<form action="php/config.php" method="post">
 			<label for="name">Full Name:</label><br>
 			<input type="text" name="full-name" id="name" placeholder="Enter Full name here" required><br>
