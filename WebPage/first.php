@@ -21,8 +21,11 @@ if (!isset($_SESSION) || !isset($_POST['submit'])) {
   $end_time = date('y-m-d H:i:s', strtotime('+'.$_SESSION["max_time"].'minutes', strtotime($_SESSION["start_time"])));
 
   $_SESSION["end_time"] = $end_time;
- // $_SESSION['submit'] = $_POST['submit'];
+  if(isset($_POST['submit'])){
+    $_SESSION['submit'] = $_POST['submit'];
+  }
+ 
 ?>  
 <script type="text/javascript">
-window.location = "test.php";
+window.location = 'test.php';
 </script>

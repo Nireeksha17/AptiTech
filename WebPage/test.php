@@ -11,8 +11,6 @@ if (!isset($_SESSION)) {
     </script>
     ";
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,6 +85,5 @@ setInterval(function()
 },1000);
 
 </script>
-
 </body>
 </html>
