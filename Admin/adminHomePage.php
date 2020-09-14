@@ -44,7 +44,7 @@ $_SESSION['admin_name'];
             $x++;
         }
       }
-      echo "<br><br><hr><br></div></div>";
+      echo "<br><hr><br></div></div>";
     ?>
 
     <!-- Category result -->
@@ -168,5 +168,6 @@ $_SESSION['admin_name'];
     ?>
   </div>
     <br>
+    <br><br><br><br><br>
   </body>	
 </html>
