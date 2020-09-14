@@ -96,7 +96,7 @@ $_SESSION['admin_name'];
           $check="SELECT * FROM topic WHERE topic_name='$updatedName'";
           $result=mysqli_query($conn,$check);
           $num=mysqli_num_rows($result);
-        if($num>=1)
+        if($num>1)
         {
             echo '<div class="alert" id="p2" style="background-color:rgba(21, 0, 255,0.6)">
             <span class="closebtn" onclick="myFunction()">&times;</span> 
@@ -108,9 +108,6 @@ $_SESSION['admin_name'];
          $reg ="UPDATE topic SET topic_name='$updatedName',cat_id='$updatedcatId', max_time='$updateTime' WHERE topic_id='$previousId'";
             if(mysqli_query($conn,$reg))
             {
-              session_unset();
-               // destroy the session
-              session_destroy();
               echo "<script type='text/javascript'>
               document.location = 'manageTopics.php'; </script>";
             }

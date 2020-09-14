@@ -12,7 +12,7 @@ $_SESSION['admin_name'];
     <link rel="icon" href="Images/icon.ico" type="image/x-icon" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/manageTopicsStyle.css">
+    <link rel="stylesheet" href="CSS/manageTopicStyle.css">
     </head>
 
   	<body>
@@ -66,12 +66,12 @@ $_SESSION['admin_name'];
             <td style='text-align:center;'>".$values["max_time"]."mins</td>
             <td style='text-align:center;'>".$values["no_of_questions"]."</td>
             <td>
-            <form action='manageQuestion.php' method='POST'>
-            <button class='btn2 manage2' name='manage' value=".$values["topic_id"]."><i class='fa fa-gear'></i>Manage Questions</button></form>
-            <form action='editTopic.php' method='POST'>
-            <button class='btn2 edit2' name='edit' value=".$values["topic_id"]."><i class='fa fa-edit' ></i>Edit</button></form>
-            <form action='' method='POST'>
-            <button class='btn2 delete2' name='delete'  value=".$values["topic_id"]."><i class='fa fa-trash'></i>Delete</button>
+            <form action='manageQuestion.php' method='POST' style='float:left'>
+            <button class='btn2 manage2' name='manage' value=".$values["topic_id"]." style='margin-left:80px'><i class='fa fa-gear'></i>Manage Questions</button></form>
+            <form action='editTopic.php' method='POST' style='float:left'>
+            <button class='btn2 edit2' name='edit' value=".$values["topic_id"]." style='margin-left:80px'><i class='fa fa-edit' ></i>Edit</button></form>
+            <form action='' method='POST' style='float:left'>
+            <button class='btn2 delete2' name='delete'  value=".$values["topic_id"]." style='margin-left:80px'><i class='fa fa-trash'></i>Delete</button>
             </form></td>
             </tr>";
           }

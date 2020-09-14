@@ -8,7 +8,7 @@ $_SESSION['admin_name'];
 <html>
   <head>
     <title>Questions</title>
-    <link rel="icon" href="Images/icon.ico" type="image/x-icon" >
+    <link rel="icon" href="Images/i.ico" type="image/x-icon" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/manageQuestionStyle.css">
@@ -115,7 +115,7 @@ $_SESSION['admin_name'];
         $check="SELECT * FROM question WHERE topic_id='$topicId' AND question='$question'";
         $result=mysqli_query($conn,$check);
         $num=mysqli_num_rows($result);
-      if($num>1)
+      if($num>0)
       {
           echo '<div class="alert2" id="p2" style="background-color:rgba(21, 0, 255,0.6);position:absolute;top:100px;left:10px;width:1460px">
           <span class="closebtn" onclick="myFunction()">&times;</span> 

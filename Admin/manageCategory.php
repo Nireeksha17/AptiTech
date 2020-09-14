@@ -50,10 +50,10 @@ $_SESSION['admin_name'];
             echo "<tr>
             <td>".$values["cat_name"]."</td>
             <td>
-            <form action='editDelete.php' method='POST'>
-            <button class='btn edit' name='edit' value=".$values["cat_id"]."><i class='fa fa-edit'></i>Edit</button></form>
+            <form action='editDelete.php' method='POST' style='float:left;'>
+            <button class='btn' name='edit' value=".$values["cat_id"]." style='background-color: rgb(255, 119, 0);border-color: white;width: 120px;margin-left:200px'><i class='fa fa-edit'></i>Edit</button></form>
             <form action='' method='POST'>
-            <button class='btn delete' name='delete'  value=".$values["cat_id"]."><i class='fa fa-trash'></i>Delete</button>
+            <button class='btn' name='delete'  value=".$values["cat_id"]." style='background-color: rgb(247, 2, 2);width: 120px;margin-left:300px'><i class='fa fa-trash'></i>Delete</button>
             </form></td>
             </tr>";
           }
