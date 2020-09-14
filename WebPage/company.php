@@ -5,7 +5,7 @@ include 'front.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google Baba</title>
+  <title>Companies: AptiTech</title>
   <link rel="stylesheet" href="css/company.css">
 </head>
 <body>

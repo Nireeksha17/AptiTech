@@ -1,20 +1,21 @@
 <?php
-session_start();
-include 'front.php';
-include 'php/config.php';
-if (!$_SESSION) {
-    echo "
-      <script>
-      alert('Login to see this page');
-      window.location = 'login.php';
-      </script>
-    ";
-}
-$email = $_SESSION['email'];
-$que = " SELECT * FROM student where email = '$email'";
-$res = mysqli_query($con, $que);
-$row = $res->fetch_assoc();
+	session_start();
+	include 'front.php';
+	include 'php/config.php';
+	if (!$_SESSION) {
+	echo "
+		<script>
+		alert('Login to see this page');
+		window.location = 'login.php';
+		</script>
+	";
+	}
+	$email = $_SESSION['email'];
+	$que = " SELECT * FROM student where email = '$email'";
+	$res = mysqli_query($con, $que);
+	$row = $res->fetch_assoc();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,94 +48,95 @@ $row = $res->fetch_assoc();
     <div class="clmn center-grd ">
       <p id="center-heading-1">Academic Records</p>
       <div class="center-heading-2">Results:</div>
-      <?php
-include 'php/student_result.php';
+      	<?php
+					include 'php/student_result.php';
 
-if (mysqli_num_rows($res_tests_taken) == 0) {
-    echo "<div class = 'no-test'>No tests taken yet</div>";
-} else {
-    echo "
-            <form action='TnC_test.php' method='post'>
-            <table class = 'result-table'>
-            <tr>
-              <th class = 'brdr'>Topic Name</th>
-              <th class = 'brdr'>Marks Scored</th>
-              <th class = 'brdr'>Time Taken</th>
-              <th class = 'brdr'>Date</th>
-              <th class = 'brdr'>Re-Take Test</th>
-              </tr>
-          ";
-    while ($test_assoc = $res_tests_taken->fetch_assoc()) {
-        include 'php/topic_name.php';
-        echo "
-            <tr>
-            <td class = 'brdr'>" . $topic_name['topic_name'] . "</td>
-            <td class = 'brdr'>" . $test_assoc['total_marks'] . "</td>
-            <td class = 'brdr'>" . $test_assoc['time_taken'] . "</td>
-            <td class = 'brdr'>" . $test_assoc['exam_date'] . "</td>
-            <td class='brdr a-in-tbl'>
-              <button type='submit' value='" . $topic_name['cat_id'] . "-" . $topic_name['topic_id'] . "' name='submit-test'>Take Test</button>
-            </td>
-            </tr>
+					if (mysqli_num_rows($res_tests_taken) == 0) {
+    				echo "<div class = 'no-test'>No tests taken yet</div>";
+					} else {
+    				echo "
+							<form action='TnC_test.php' method='post'>
+							<table class = 'result-table'>
+							<tr>
+								<th class = 'brdr'>Topic Name</th>
+								<th class = 'brdr'>Marks Scored</th>
+								<th class = 'brdr'>Time Taken</th>
+								<th class = 'brdr'>Date</th>
+								<th class = 'brdr'>Re-Take Test</th>
+								</tr>
+						";
+    			while ($test_assoc = $res_tests_taken->fetch_assoc()) {
+        		include 'php/topic_name.php';
+        		echo "
+          		<tr>
+								<td class = 'brdr'>" . $topic_name['topic_name'] . "</td>
+								<td class = 'brdr'>" . $test_assoc['total_marks'] . "</td>
+								<td class = 'brdr'>" . $test_assoc['time_taken'] . "</td>
+								<td class = 'brdr'>" . $test_assoc['exam_date'] . "</td>
+								<td class='brdr a-in-tbl'>
+									<button type='submit' value='" . $topic_name['cat_id'] . "-" . $topic_name['topic_id'] . "' name='submit-test'>Take Test</button>
+								</td>
+            	</tr>
             ";
-    }
-    echo "
+    			}
+  				echo "
             </table>
             </from>
           ";
-
-}
-?>
+					}
+				?>
       <div class="center-heading-2" style="padding-top: 20px;">Available Tests:</div>
       <?php
-include 'php/remaining_tests.php';
-if (mysqli_num_rows($remaining_test) == 0) {
-    echo "<div class = 'no-test'>No new tests to be taken yet</div>";
-} else {
-    echo "
-          <table class = 'result-table topic-remaining'>
-          <form action ='TnC_test.php' method='POST'>
-          ";
-    while ($topics_remaining = $remaining_test->fetch_assoc()) {
-        echo "<tr>
-                <td class = 'brdr'>" . $topics_remaining['topic_name'] . "
-                </td>
-                <td class='brdr a-in-tbl'>
-                  <button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button>
-                </td>
-                <td class='brdr a-in-tbl'>
-                  <button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit-test'>Take Test</button>
-                </td>
-              </tr>";
-    }
-    echo "
-          </table>
-          </form>
-          ";
-}
-?>
-    </div>
-      <div class="clmn right-grd ">
-        <table class="topics">
-          <tr><th><a href="#">Aptitude</a></th></tr>
-          <tr><td><a href="#"><li>Ages</li></a></td></tr>
-          <tr><td><a href="#"><li>Percentage</li></a></td></tr>
-          <tr><td><a href="#"><li>Simple Intrest</li></a></td></tr>
-          <tr><td><a href="#"><li>Time and Distance</li></a></td></tr>
+				include 'php/remaining_tests.php';
+				if (mysqli_num_rows($remaining_test) == 0) {
+    			echo "<div class = 'no-test'>No new tests to be taken yet</div>";
+				} else {
+    				echo "
+          	<table class = 'result-table topic-remaining'>
+          	<form action ='TnC_test.php' method='POST'>
+          	";
+    				while ($topics_remaining = $remaining_test->fetch_assoc()) {
+							echo "
+								<tr>
+									<td class = 'brdr'>
+									" . $topics_remaining['topic_name'] . "
+									</td>
+									<td class='brdr a-in-tbl'>
+										<button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button>
+									</td>
+									<td class='brdr a-in-tbl'>
+										<button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit-test'>Take Test</button>
+									</td>
+								</tr>";
+    				}
+    				echo "
+          	</table>
+          	</form>
+          	";
+				}
+			?>
+			</div>
+				<div class="clmn right-grd ">
+					<table class="topics">
+						<tr><th><a href="#">Aptitude</a></th></tr>
+						<tr><td><a href="#"><li>Ages</li></a></td></tr>
+						<tr><td><a href="#"><li>Percentage</li></a></td></tr>
+						<tr><td><a href="#"><li>Simple Intrest</li></a></td></tr>
+						<tr><td><a href="#"><li>Time and Distance</li></a></td></tr>
 
-          <tr><th><a href="#">Verbal</a></th></tr>
-          <tr><td><a href="#"><li>Anology</li></a></td></tr>
-          <tr><td><a href="#"><li>Antonyms</li></a></td></tr>
-          <tr><td><a href="#"><li>Comprehension</li></a></td></tr>
-          <tr><td><a href="#"><li>Idioms</li></a></td></tr>
+						<tr><th><a href="#">Verbal</a></th></tr>
+						<tr><td><a href="#"><li>Anology</li></a></td></tr>
+						<tr><td><a href="#"><li>Antonyms</li></a></td></tr>
+						<tr><td><a href="#"><li>Comprehension</li></a></td></tr>
+						<tr><td><a href="#"><li>Idioms</li></a></td></tr>
 
-          <tr><th><a href="#">Reasoning</a></th></tr>
-          <tr><td><a href="#"><li>Blood Relation</li></a></td></tr>
-          <tr><td><a href="#"><li>Cause and Effect</li></a></td></tr>
-          <tr><td><a href="#"><li>Classification</li></a></td></tr>
-          <tr><td><a href="#"><li>Coding and Decoding</li></a></td></tr>
-        </table>
-    </div>
-  </div>
+						<tr><th><a href="#">Reasoning</a></th></tr>
+						<tr><td><a href="#"><li>Blood Relation</li></a></td></tr>
+						<tr><td><a href="#"><li>Cause and Effect</li></a></td></tr>
+						<tr><td><a href="#"><li>Classification</li></a></td></tr>
+						<tr><td><a href="#"><li>Coding and Decoding</li></a></td></tr>
+					</table>
+				</div>
+			</div>
 </body>
 </html>
