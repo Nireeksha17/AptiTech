@@ -14,7 +14,7 @@ if (!isset($_SESSION) || !isset($_POST['submit'])) {
   mysqli_select_db($link,"aptitech");
   $duration = "";
   $res = mysqli_query($link,"select * from topic where topic_id = $topic_id");*/
-  include 'php/get_questions.php';
+ /* include 'php/get_questions.php';
   //while($row = mysqli_fetch_array($res))
   $query1 = "SELECT * FROM topic WHERE topic_id = $topic_id";
     $question_table1 = mysqli_query($con, $query1);
@@ -28,7 +28,7 @@ if (!isset($_SESSION) || !isset($_POST['submit'])) {
   $_SESSION["start_time"] = date("y-m-d H:i:s");
   $end_time = date('y-m-d H:i:s', strtotime('+'.$_SESSION["max_time"].'minutes', strtotime($_SESSION["start_time"])));
 
-  $_SESSION["end_time"] = $end_time;
+  $_SESSION["end_time"] = $end_time;*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
