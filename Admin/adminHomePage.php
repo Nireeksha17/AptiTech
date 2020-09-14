@@ -75,6 +75,8 @@ $_SESSION['admin_name'];
                  {
                   $sum=$sum+$value3["total_marks"] ;
                  }
+                 if($sum>0)
+                 {
                  $percentage=($sum/($num3*100))*100;
                  if($percentage>=85 && $percentage<=100)
                     $color="#4CAF50";
@@ -89,6 +91,7 @@ $_SESSION['admin_name'];
                         <div class='skills' style='width:".$percentage."%; background-color:".$color."'>".$percentage."%</div>
                         </div>";
                }
+             }
 
            }
            else

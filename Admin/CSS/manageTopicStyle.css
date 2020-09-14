@@ -196,8 +196,6 @@ hr.rounded {
 .edit2
 {
   background-color: rgb(255, 119, 0);
-  position:relative;
-  left: 160px;
 }
 .edit2 i
 {
@@ -206,9 +204,7 @@ hr.rounded {
 .manage2
 {
   background-color: rgb(69, 81, 255);
-  position:relative;
-  left:-10px;
-  top:32px;
+  
 }
 .manage2 i
 {
@@ -217,9 +213,6 @@ hr.rounded {
 .delete2
 {
   background-color: rgb(247, 2, 2);
-  position:relative;
-  top:-35px;
-  left: 240px;
 }
 .delete2 i
 {

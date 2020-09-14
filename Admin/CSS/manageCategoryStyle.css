@@ -171,30 +171,13 @@ hr.rounded {
   background-color: rgba(3, 252, 94,0.7);
   color: black;
 }  
-.edit
-{
-  background-color: rgb(255, 119, 0);
-  border-color: white;
-  width: 120px;
-  position:relative;
-  top:10px;
-  left: 100px;
-}
-.delete
-{
-  background-color: rgb(247, 2, 2);
-  position:relative;
-   width: 120px;
-  top:-25px;
-  left: 470px;
-}
 
-.edit i
+.btn i
 {
   padding-right:5px;
 }
 
-.delete i
+.btn i
 {
   padding-right:5px;
 }
