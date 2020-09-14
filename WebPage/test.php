@@ -1,7 +1,9 @@
 <?php
 session_start();
-
-if (!isset($_SESSION) || !isset($_POST['submit'])) {
+if (!isset($_SESSION)) {
+  if(isset($_SESSION['submit'])){
+    $_POST['submit'] = $_SESSION['submit'];
+  }
     echo "
     <script>
     alert('Please login to take test!');
@@ -10,42 +12,18 @@ if (!isset($_SESSION) || !isset($_POST['submit'])) {
     ";
 }
 
-//$_SESSION['start_time'] = date('Y-m-d H:i:s');
-/*$link = mysqli_connect("localhost","root","");
-<<<<<<< HEAD
-  mysqli_select_db($link,"aptitech");
-  $duration = "";
-  $res = mysqli_query($link,"select * from topic where topic_id = $topic_id");*/
- /* include 'php/get_questions.php';
-  //while($row = mysqli_fetch_array($res))
-  $query1 = "SELECT * FROM topic WHERE topic_id = $topic_id";
-    $question_table1 = mysqli_query($con, $query1);
-  $max_time = "";
-  while($row = $question_table1->fetch_assoc())
-  {
-=======
-mysqli_select_db($link,"aptitech");
-$duration = "";
-$res = mysqli_query($link,"select * from topic where topic_id = $topic_id");*/
 include 'php/get_questions.php';
-//while($row = mysqli_fetch_array($res))
 $query1 = "SELECT * FROM topic WHERE topic_id = $topic_id";
 $question_table1 = mysqli_query($con, $query1);
 $max_time = "";
 while ($row = $question_table1->fetch_assoc()) {
->>>>>>> f35a1f0e0c69f2bc356863ab6ffdfb4f71c7c298
     $max_time = $row['max_time'];
-
-<<<<<<< HEAD
-  $_SESSION["end_time"] = $end_time;*/
-=======
 }
 $_SESSION["max_time"] = $max_time;
 $_SESSION["start_time"] = date("y-m-d H:i:s");
 $end_time = date('y-m-d H:i:s', strtotime('+' . $_SESSION["max_time"] . 'minutes', strtotime($_SESSION["start_time"])));
 
 $_SESSION["end_time"] = $end_time;
->>>>>>> f35a1f0e0c69f2bc356863ab6ffdfb4f71c7c298
 ?>
 <!DOCTYPE html>
 <html lang="en">
