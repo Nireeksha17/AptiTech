@@ -55,8 +55,7 @@ $_SESSION['admin_name'];
                 
   /**
    * Calculate percetage between the numbers
-   */			if($sum!=0)
-  				{
+   */
                 $per = ($sum/($total2*100))*100;
                 //grading
                 if($per >90)
@@ -91,13 +90,6 @@ $_SESSION['admin_name'];
                     $grade ='Fail';
                     $color="#f20000";
                 }
-               }
-               else
-               {
-               		$grade ='Fail';
-               		$color="#f20000";
-               		$per=0;
-               }
                 echo "<tr align='center'>";
                  echo "<td>".$res['usn']."</td>";
                  echo "<td>".$res['name']."</td>";

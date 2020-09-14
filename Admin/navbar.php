@@ -20,7 +20,6 @@
       </div> 
       <a href="viewUsers.php">Users</a>
       <a href="viewResults.php">Exam Results</a>
-      <a href="company.php">Company</a>
       <div class="dropdown" style="float: right;padding-right: 40px">
         <button class="dropbtn"><i class="fa fa-user"></i><?php echo $_SESSION['admin_name'];
         ?><i class="fa fa-caret-down"></i>
