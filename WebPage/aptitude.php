@@ -41,13 +41,18 @@ input[type="button"]{
 $conn = mysqli_connect("localhost", "root", "", "aptitech");
 $query = "SELECT * FROM topic where cat_id = 1";
 $result = mysqli_query($conn, $query);
-//while ($que_assoc = $result->fetch_assoc()) {
-
+$num_of_button = 6;
 while ($row = $result->fetch_assoc()) {
-
-    echo "   <td style='color:white;text-decoration:none;'>
-         <button  style='padding: 20px;background-color:#005461;color:white; width: 150px;white-space: normal; height:100px;'><a href='../Content/" . $row['cat_id'] . "-" . $row['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>" . $row['topic_name'] . "</a></button>
-        </td>";
+    echo "<td style='color:white;text-decoration:none;'>
+          <button  style='padding: 20px;background-color:#005461;color:white; width: 150px;white-space: normal; height:100px;'><a href='../Content/" . $row['cat_id'] . "-" . $row['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>" . $row['topic_name'] . "</a></button>
+          </td>
+          ";
+    if(--$num_of_button == 0){
+      echo"
+          </tr><tr>
+      ";
+      $num_of_button = 6;
+    }
 }
 //' name='submit-test'   .$row['topic_name'].
 ?>
