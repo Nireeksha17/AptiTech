@@ -1,6 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION) || !isset($_POST['submit'])) {
+if (!isset($_SESSION)) {
+  if(isset($_SESSION['submit'])){
+    $_POST['submit'] = $_SESSION['submit'];
+  }
     echo "
     <script>
     alert('Please login to take test!');
@@ -9,31 +12,12 @@ if (!isset($_SESSION) || !isset($_POST['submit'])) {
     ";
 }
 
-//$_SESSION['start_time'] = date('Y-m-d H:i:s');
-/*$link = mysqli_connect("localhost","root","");
-  mysqli_select_db($link,"aptitech");
-  $duration = "";
-  $res = mysqli_query($link,"select * from topic where topic_id = $topic_id");*/
-  include 'php/get_questions.php';
-  //while($row = mysqli_fetch_array($res))
-  $query1 = "SELECT * FROM topic WHERE topic_id = $topic_id";
-    $question_table1 = mysqli_query($con, $query1);
-  $max_time = "";
-  while($row = $question_table1->fetch_assoc())
-  {
-    $max_time = $row['max_time'];
-    
-  }
-  $_SESSION["max_time"] = $max_time;
-  $_SESSION["start_time"] = date("y-m-d H:i:s");
-  $end_time = date('y-m-d H:i:s', strtotime('+'.$_SESSION["max_time"].'minutes', strtotime($_SESSION["start_time"])));
 
-  $_SESSION["end_time"] = $end_time;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Document</title>
+  <title>Test: AptiTech</title>
   <link rel="icon" type= "image/png" href="img/fav_icon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -64,7 +48,7 @@ if (!isset($_SESSION) || !isset($_POST['submit'])) {
   </nav>
   <div id = "response" class="timer"></div>
   <div class="container">
-    <form action="result.php" method="post">
+    <form action="result.php" method="post" id = 'id-for-submit'>
       <?php
 if (isset($_SESSION)) {
     include 'php/get_questions.php';
@@ -96,7 +80,12 @@ setInterval(function()
   xmlhttp.open("GET","php/response.php",false);
   xmlhttp.send(null);
   document.getElementById("response").innerHTML = xmlhttp.responseText;
+  if(xmlhttp.responseText=='00:00'){
+    alert('Time Up! Autosubmitting the test!');
+    document.getElementById("id-for-submit").submit.click();
+  }
 },1000);
+
 </script>
 
 </body>

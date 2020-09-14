@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <?php
 session_start();
+include 'front.php';
 include 'php/config.php';
 if (!$_SESSION) {
     echo "
@@ -15,29 +15,14 @@ $que = " SELECT * FROM student where email = '$email'";
 $res = mysqli_query($con, $que);
 $row = $res->fetch_assoc();
 ?>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
   <link rel="icon" type= "image/png" href="img/fav_icon.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/profile.css">
   <title><?php echo $row['name'] ?>: AptiTech-Profile </title>
 </head>
 <body>
-<?php
-include 'front.php';
-if (isset($_SESSION['name'])) {
-    echo "
-    <script>
-    document.getElementById('hide-after-login').style.display = 'none';
-    document.getElementById('show-after-login').style.display = 'block';
-    </script>
-  ";
-}
-?>
-
   <div class="container" style="float: left;">
     <div class="clmn left-grd " >
       <img class="profile-logo" src="img/profile_logo.png" alt="Profile Logo" >

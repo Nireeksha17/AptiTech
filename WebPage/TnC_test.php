@@ -10,9 +10,8 @@ if (!isset($_SESSION)) {
 } else {
     echo "Some Rules for taking test bla bla bla";
     echo "
-      <form action='test.php' method='post'>
+      <form action='first.php' method='post'>
       <button type='submit' value='" . $_POST['submit-test'] . "' name='submit'>Take Test</button>
       </form>
     ";
 }
-?>
