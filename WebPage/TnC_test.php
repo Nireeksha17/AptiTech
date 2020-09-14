@@ -15,4 +15,3 @@ if (!isset($_SESSION)) {
       </form>
     ";
 }
-?>

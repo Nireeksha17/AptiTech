@@ -1,2 +1,72 @@
-* {
+.log
+{
+    width:30%;
+    height: auto;
+    box-shadow: 0 0 2px 0;
+    background-color: #005461;
+    padding: 10px;
+    margin: 4% auto 0;
+    text-align: center;
+}
+#logo
+{
+    width: 20%;
+    margin:0 0 3px;
+}
+input[type=password], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type=text], input[type=email] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type=tel], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type=tel], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+ #dept
+ {
+   width:60%;
+   padding:12px 20px ;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc ;
+   box-sizing: border-box;
+ }
+#back-btn
+{
+  margin: 20px 0 ;
+  width: 75%;
+  box-shadow: 0 0 2px 0;
+}
+
+#Sign-btn
+{
+  width: 75%;
+  margin: 20px 0 0;
+  box-shadow: 0 0 2px 0;
+  height: 20%;
 }

@@ -1,6 +1,6 @@
- <?php 
-  include 'front.php';
-  session_start();
+ <?php
+include 'front.php';
+session_start();
 ?>
 </<!DOCTYPE html>
 <html>
@@ -20,7 +20,6 @@
     <input type="text" placeholder="example@xyz.com" name="userEmail" required>
     <label for="psw">Password</label>
     <input type = "password" placeholder="***********" name="pass" required>
-    <div id="invalid" style="display: none;">Invalid Credentials</div>
     <button type="submit" class="btnl" name="submit" >Login</button>
   </form>
 </div>
