@@ -122,52 +122,55 @@
 				<form action="intro.php" method="post">
 					<?php
 						include 'php/topic_list.php';
-						echo "
-							<tr>
-								<th class='lft-grd-heading'>Aptitude</th>
-							</tr>
-						";
-						while($quants_row = $quants_table -> fetch_assoc()){
-								echo "
-									<tr>
-										<td>
-											<button class='lft-grd-btn' type='submit' name = 'submit' value=".$quants_row['topic_id']."-".$quants_row['topic_id'].">".$quants_row['topic_name']."</button>
-										</td>
-									</tr>
-								";
-						}
-						echo "
-							<tr>
-								<th class='lft-grd-heading'>Technical</th>
-							</tr>
-						";
-						while($technical_row = $technical_table -> fetch_assoc()){
-								echo "
-									<tr>
-										<td>
-											<button class='lft-grd-btn' type='submit' name = 'submit' value=".$technical_row['topic_id']."-".$technical_row['topic_id'].">".$technical_row['topic_name']."</button>
-										</td>
-									</tr>
-								";
-						}
-						echo "
-							<tr>
-								<th class='lft-grd-heading'>Verbal</th>
-							</tr>
-						";
-						while($verbal_row = $verbal_table -> fetch_assoc()){
-								echo "
-									<tr>
-										<td>
-											<button class='lft-grd-btn' type='submit' name = 'submit' value=".$verbal_row['topic_id']."-".$verbal_row['topic_id'].">".$verbal_row['topic_name']."</button>
-										</td>
-									</tr>
-								";
-						}
-					?>
+					 ?>
 				</form>
 				</table>
 			</div>
 		</div>
 </body>
 </html>
+
+
+					<!-- // 	echo "
+					// 		<tr>
+					// 			<th class='lft-grd-heading'>Aptitude</th>
+					// 		</tr>
+					// 	";
+					// 	while($quants_row = $quants_table -> fetch_assoc()){
+					// 			echo "
+					// 				<tr>
+					// 					<td>
+					// 						<button class='lft-grd-btn' type='submit' name = 'submit' value=".$quants_row['topic_id']."-".$quants_row['topic_id'].">".$quants_row['topic_name']."</button>
+					// 					</td>
+					// 				</tr>
+					// 			";
+					// 	}
+					// 	echo "
+					// 		<tr>
+					// 			<th class='lft-grd-heading'>Technical</th>
+					// 		</tr>
+					// 	";
+					// 	while($technical_row = $technical_table -> fetch_assoc()){
+					// 			echo "
+					// 				<tr>
+					// 					<td>
+					// 						<button class='lft-grd-btn' type='submit' name = 'submit' value=".$technical_row['topic_id']."-".$technical_row['topic_id'].">".$technical_row['topic_name']."</button>
+					// 					</td>
+					// 				</tr>
+					// 			";
+					// 	}
+					// 	echo "
+					// 		<tr>
+					// 			<th class='lft-grd-heading'>Verbal</th>
+					// 		</tr>
+					// 	";
+					// 	while($verbal_row = $verbal_table -> fetch_assoc()){
+					// 			echo "
+					// 				<tr>
+					// 					<td>
+					// 						<button class='lft-grd-btn' type='submit' name = 'submit' value=".$verbal_row['topic_id']."-".$verbal_row['topic_id'].">".$verbal_row['topic_name']."</button>
+					// 					</td>
+					// 				</tr>
+					// 			";
+					// 	}
+					// -->

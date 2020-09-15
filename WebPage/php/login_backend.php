@@ -13,7 +13,7 @@
       { echo"
         <script>
         alert('Invalid Credentials');
-        document.location = 'login.php';
+        document.location = '../login.php';
         </script>
         ";
       }

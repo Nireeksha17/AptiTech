@@ -17,6 +17,7 @@
           <a href="aptitude.php">Quantitaitve Aptitude</a>
           <a href="verbal.php">Verbal</a>
           <a href="reasoning.php">Reasoning</a>
+          <a href="technical.php">Technical</a>
         </div>
       </div>
       <div id = "hide-after-login" style=" display:block; float: right;padding-right: 40px">
