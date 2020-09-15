@@ -102,7 +102,7 @@
 									" . $topics_remaining['topic_name'] . "
 									</td>
 									<td class='brdr a-in-tbl'>
-										<button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button>
+										<button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='intro'>Introduction</button>
 									</td>
 									<td class='brdr a-in-tbl'>
 										<button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit'>Take Test</button>

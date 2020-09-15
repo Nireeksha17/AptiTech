@@ -32,7 +32,7 @@
 </head>
 <body>
 	<object data="<?php echo '../Content/'.$_POST['submit'].'.pdf'?>" type="application/pdf"></object>
-	<form action="test.php" method="post">
+	<form action="first.php" method="post">
 		<button type="submit" name = "submit" value="<?php echo $_POST['submit'];?>">Take test</button>
 	</form>
 </body>
