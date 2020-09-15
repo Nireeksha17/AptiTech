@@ -44,15 +44,19 @@ include 'front.php';
 </head>
 <body>
 	<div style="padding-left:20px; padding-right: 20px; padding-top: 5px;">
-		<h1 align="center" >APTITUDE</h1>
+		<h1 align="center" >Aptitude</h1>
 		<center>
 		<table>
 			<tr>
 				<?php
 					$conn = mysqli_connect("localhost", "root", "", "aptitech");
-					$query = "SELECT * FROM topic where cat_id = 1";
-					$result = mysqli_query($conn, $query);
-					$num_of_button = 6;
+					$query = "SELECT * FROM `category` WHERE `cat_name` = 'Aptitude';";
+					$cat_table = mysqli_query($conn, $query);
+					$cat_assoc = $cat_table -> fetch_assoc();
+					$cat_id = $cat_assoc['cat_id'];
+					$query1 = "SELECT * FROM topic where cat_id = $cat_id;";
+					$result = mysqli_query($conn, $query1);
+					$num_of_button = 5;
 					while ($row = $result->fetch_assoc()) {
 						echo "
 							<td class = 'row'>
