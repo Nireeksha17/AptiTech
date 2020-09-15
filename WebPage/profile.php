@@ -65,7 +65,7 @@
 								<th class = 'brdr'>Re-Take Test</th>
 								</tr>
 						";
-    			while ($test_assoc = $res_tests_taken->fetch_assoc()) {
+    				while ($test_assoc = $res_tests_taken->fetch_assoc()) {
         		include 'php/topic_name.php';
         		echo "
           		<tr>
@@ -78,22 +78,22 @@
 								</td>
             	</tr>
             ";
-    			}
-  				echo "
-            </table>
-            </from>
-          ";
+    				}
+  					echo "
+							</table>
+							</from>
+						";
 					}
 				?>
-      <div class="center-heading-2" style="padding-top: 20px;">Available Tests:</div>
-      <?php
-				include 'php/remaining_tests.php';
-				if (mysqli_num_rows($remaining_test) == 0) {
-    			echo "<div class = 'no-test'>No new tests to be taken yet</div>";
-				} else {
+      	<div class="center-heading-2" style="padding-top: 20px;">Available Tests:</div>
+      	<?php
+					include 'php/remaining_tests.php';
+					if (mysqli_num_rows($remaining_test) == 0) {
+    				echo "<div class = 'no-test'>No new tests to be taken yet</div>";
+					} else {
     				echo "
-          	<table class = 'result-table topic-remaining'>
-          	<form action ='TnC_test.php' method='POST'>
+          		<table class = 'result-table topic-remaining'>
+          		<form action ='TnC_test.php' method='POST'>
           	";
     				while ($topics_remaining = $remaining_test->fetch_assoc()) {
 							echo "
@@ -107,36 +107,37 @@
 									<td class='brdr a-in-tbl'>
 										<button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit-test'>Take Test</button>
 									</td>
-								</tr>";
+								</tr>
+							";
     				}
     				echo "
-          	</table>
-          	</form>
+          		</table>
+          		</form>
           	";
-				}
-			?>
-			</div>
-				<div class="clmn right-grd ">
-					<table class="topics">
-						<tr><th><a href="#">Aptitude</a></th></tr>
-						<tr><td><a href="#"><li>Ages</li></a></td></tr>
-						<tr><td><a href="#"><li>Percentage</li></a></td></tr>
-						<tr><td><a href="#"><li>Simple Intrest</li></a></td></tr>
-						<tr><td><a href="#"><li>Time and Distance</li></a></td></tr>
+					}
+				?>
+		</div>
+		<div class="clmn right-grd ">
+				<table class="topics">
+					<tr><th><a href="#">Aptitude</a></th></tr>
+					<tr><td><a href="#"><li>Ages</li></a></td></tr>
+					<tr><td><a href="#"><li>Percentage</li></a></td></tr>
+					<tr><td><a href="#"><li>Simple Intrest</li></a></td></tr>
+					<tr><td><a href="#"><li>Time and Distance</li></a></td></tr>
 
-						<tr><th><a href="#">Verbal</a></th></tr>
-						<tr><td><a href="#"><li>Anology</li></a></td></tr>
-						<tr><td><a href="#"><li>Antonyms</li></a></td></tr>
-						<tr><td><a href="#"><li>Comprehension</li></a></td></tr>
-						<tr><td><a href="#"><li>Idioms</li></a></td></tr>
+					<tr><th><a href="#">Verbal</a></th></tr>
+					<tr><td><a href="#"><li>Anology</li></a></td></tr>
+					<tr><td><a href="#"><li>Antonyms</li></a></td></tr>
+					<tr><td><a href="#"><li>Comprehension</li></a></td></tr>
+					<tr><td><a href="#"><li>Idioms</li></a></td></tr>
 
-						<tr><th><a href="#">Reasoning</a></th></tr>
-						<tr><td><a href="#"><li>Blood Relation</li></a></td></tr>
-						<tr><td><a href="#"><li>Cause and Effect</li></a></td></tr>
-						<tr><td><a href="#"><li>Classification</li></a></td></tr>
-						<tr><td><a href="#"><li>Coding and Decoding</li></a></td></tr>
-					</table>
-				</div>
+					<tr><th><a href="#">Reasoning</a></th></tr>
+					<tr><td><a href="#"><li>Blood Relation</li></a></td></tr>
+					<tr><td><a href="#"><li>Cause and Effect</li></a></td></tr>
+					<tr><td><a href="#"><li>Classification</li></a></td></tr>
+					<tr><td><a href="#"><li>Coding and Decoding</li></a></td></tr>
+				</table>
 			</div>
+		</div>
 </body>
 </html>
