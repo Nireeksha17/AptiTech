@@ -97,3 +97,13 @@ body {
   color: darkslategray;
   cursor: pointer;
 }
+table tr td .lft-grd-btn {
+  width: 100%;
+  border: none;
+  background: none;
+}
+table tr .lft-grd-heading {
+  text-decoration: underline;
+  padding: 5px 0 5px 0;
+  font-size: 18px;
+}
