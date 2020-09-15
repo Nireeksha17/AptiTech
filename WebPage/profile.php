@@ -19,9 +19,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" type= "image/png" href="img/fav_icon.png">
-  <link rel="stylesheet" href="css/profile.css">
-  <title><?php echo $row['name'] ?>: AptiTech-Profile </title>
+	<link rel="icon" type= "image/png" href="img/fav_icon.png">
+	<link rel="stylesheet" href="css/profile.css">
+	<title><?php echo $row['name'] ?>: AptiTech-Profile </title>
 </head>
 <body>
   <div class="container" style="float: left;">
@@ -74,7 +74,7 @@
 								<td class = 'brdr'>" . $test_assoc['time_taken'] . "</td>
 								<td class = 'brdr'>" . $test_assoc['exam_date'] . "</td>
 								<td class='brdr a-in-tbl'>
-									<button type='submit' value='" . $topic_name['cat_id'] . "-" . $topic_name['topic_id'] . "' name='submit-test'>Take Test</button>
+									<button type='submit' value='" . $topic_name['cat_id'] . "-" . $topic_name['topic_id'] . "' name='submit'>Take Test</button>
 								</td>
 							</tr>
             ";
@@ -105,7 +105,7 @@
 										<button><a href='../Content/" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . ".pdf' target='_blank' rel='noopener noreferrer'>Introduction</a></button>
 									</td>
 									<td class='brdr a-in-tbl'>
-										<button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit-test'>Take Test</button>
+										<button type='submit' value='" . $topics_remaining['cat_id'] . "-" . $topics_remaining['topic_id'] . "' name='submit'>Take Test</button>
 									</td>
 								</tr>
 							";
@@ -118,48 +118,48 @@
 				?>
 		</div>
 		<div class="clmn right-grd ">
-				<table class="topics">
+				<table class="topics" style = "width: 100%;">
 				<form action="intro.php" method="post">
 					<?php
 						include 'php/topic_list.php';
 						echo "
 							<tr>
-								<th>Aptitude</th>
+								<th class='lft-grd-heading'>Aptitude</th>
 							</tr>
 						";
 						while($quants_row = $quants_table -> fetch_assoc()){
 								echo "
 									<tr>
 										<td>
-											<button type='submit' name=".$quants_row['topic_id']."-".$quants_row['topic_id'].">".$quants_row['topic_name']."</button>
+											<button class='lft-grd-btn' type='submit' name = 'submit' value=".$quants_row['topic_id']."-".$quants_row['topic_id'].">".$quants_row['topic_name']."</button>
 										</td>
 									</tr>
 								";
 						}
 						echo "
 							<tr>
-								<th>Technical</th>
+								<th class='lft-grd-heading'>Technical</th>
 							</tr>
 						";
 						while($technical_row = $technical_table -> fetch_assoc()){
 								echo "
 									<tr>
 										<td>
-											<button type='submit' name=".$technical_row['topic_id']."-".$technical_row['topic_id'].">".$technical_row['topic_name']."</button>
+											<button class='lft-grd-btn' type='submit' name = 'submit' value=".$technical_row['topic_id']."-".$technical_row['topic_id'].">".$technical_row['topic_name']."</button>
 										</td>
 									</tr>
 								";
 						}
 						echo "
 							<tr>
-								<th>Verbal</th>
+								<th class='lft-grd-heading'>Verbal</th>
 							</tr>
 						";
 						while($verbal_row = $verbal_table -> fetch_assoc()){
 								echo "
 									<tr>
 										<td>
-											<button type='submit' name=".$verbal_row['topic_id']."-".$verbal_row['topic_id'].">".$verbal_row['topic_name']."</button>
+											<button class='lft-grd-btn' type='submit' name = 'submit' value=".$verbal_row['topic_id']."-".$verbal_row['topic_id'].">".$verbal_row['topic_name']."</button>
 										</td>
 									</tr>
 								";
