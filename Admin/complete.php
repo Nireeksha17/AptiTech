@@ -42,9 +42,9 @@ $_SESSION['admin_name'];
         {
          echo"<tr align='center'>";
             echo "<td>".$res['topic_name']."</td>";
-            echo "<td>".$res[2]."</td>";
             echo "<td>".$res[3]."</td>";
-            echo "<td>".$res[4]."</td>";     
+            echo "<td>".$res[4]."</td>";
+            echo "<td>".$res[5]."</td>";     
         echo"</tr>";
         }
     ?>
